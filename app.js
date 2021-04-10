@@ -11,6 +11,3 @@ app.use(express.json());
 app.use(scoreRoutes);
 
 app.listen(3000);
-
-
-
