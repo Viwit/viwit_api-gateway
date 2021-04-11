@@ -1,7 +1,7 @@
 const express = require('express');
 const graphqlHttp = require('express-graphql').graphqlHTTP;
 
-const graphqlSchema = require('./graphql/schema');
+const graphqlSchema = require('./graphql/schemas');
 const graphqlResolver = require('./graphql/resolvers');
 
 //Routes middleware import
@@ -19,6 +19,7 @@ app.use(
   graphqlHttp({
     schema: graphqlSchema,
     rootValue: graphqlResolver,
+    graphiql: true
   })
 );
 
