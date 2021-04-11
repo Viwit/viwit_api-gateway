@@ -10,9 +10,7 @@ const generalQueries= `
   getBusByLicensePlate(licensePlate: String!): Bus!
 `
 
-const generalMutations = `
-  putscore(entity: EntityInput!): ScoreMessage!
-`
+const generalMutations = ``
 
 module.exports = {
   generalTypeDef,
