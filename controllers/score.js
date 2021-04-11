@@ -1,7 +1,8 @@
-const apiAdapter = require('./apiAdapter');
+const apiAdapter = require('../apiAdapter');
 
 //BASE URL FOR THE MICROSERVICE
 const BASE_URL = 'http://localhost:8000';
+
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(BASE_URL);
 
