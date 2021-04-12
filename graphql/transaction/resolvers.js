@@ -1,4 +1,4 @@
-const apiAdapter = require('../../apiAdapter')
+const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
 const TRANSACTION_URL = 'http://ec2-54-237-22-194.compute-1.amazonaws.com:4100';
