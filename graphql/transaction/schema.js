@@ -6,7 +6,7 @@ const transactionTypeDef = `
     user_id:  Int!
   }
 
-  type DataWallet {
+  type DataAllWallet {
     data : [Wallet!]
   }
 
@@ -19,7 +19,19 @@ const transactionTypeDef = `
     wallet_id: Int!
   }
 
+  type DataAllTransaction {
+    data : [Transaction!]
+  }
+
   type Tran {
+    data: Transaction!
+  }
+
+  type SingleWallet {
+    data: Wallet!
+  }
+
+  type SingleTransaction {
     data: Transaction!
   }
 
@@ -28,16 +40,25 @@ const transactionTypeDef = `
     user_id: Int!
   }
 
- 
+  input TransactionInput {
+    token: String!
+    wallet_id: Int!
+    id_method_payment: Int!
+    mount: Int!
+    type: Int!
+  }
 `
-const transactionQueries= `
-getAllWallet: DataWallet!
-getWalletByUserId(id: Int!): Tran!
+const transactionQueries = `
+getAllWallet: DataAllWallet!
+getWalletByUserId(id: Int!): SingleWallet!
+getTransactionById(id: Int!): SingleTransaction!
+getAllTransaction: DataAllTransaction!
 
 `
 
 const transactionMutations = `
-postCreateWallet(wallet:WalletInput!):Wallet!
+postCreateWallet(wallet:WalletInput!): SingleWallet!
+postCreateTransaction(transaction:TransactionInput!): SingleTransaction!
 
 `
 
@@ -46,4 +67,3 @@ module.exports = {
   transactionQueries,
   transactionMutations
 }
-
