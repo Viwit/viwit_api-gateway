@@ -1,4 +1,4 @@
-const apiAdapter = require('../../apiAdapter');
+const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
 const GENERAL_URL = 'http://host.docker.internal:4000';
