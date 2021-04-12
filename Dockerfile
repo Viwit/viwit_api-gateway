@@ -1,7 +1,7 @@
 FROM node:14
-WORKDIR /usr/src/app
-COPY package*.json ./
+WORKDIR /api-gateway
+COPY package*.json /api-gateway/
 RUN npm install
-COPY . .
+COPY . /api-gateway/
 EXPOSE 3000
 CMD ["node","app.js"]
