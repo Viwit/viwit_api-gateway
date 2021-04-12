@@ -5,6 +5,7 @@ const { getBusByLicensePlate, getAllBus, putBus, postBus, deleteBus, getAllBusSt
       , getAllRoute, getRouteByIdRoute, putRoute,postRoute,deleteRoute
       , getAllRouteStops, getRouteStopByIdRouteStopsIdBusStop_BusStop, postRouteStops, deleteRouteStops
       , getAllTrips, getTripByIdIdTrip, getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver, putTrip, postTrip, deleteTrip} = require('./general/resolvers')
+const { postCreateWallet, getWalletByUserId,  getAllWallet } = require('./transaction/resolvers')
 
 
 module.exports = {
@@ -47,5 +48,16 @@ module.exports = {
   getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver,
   putTrip,
   postTrip,
-  deleteTrip
+  deleteTrip,
+
+
+
+    /*------TRANSACTION------*/
+    
+
+    postCreateWallet,
+    getWalletByUserId,
+    getAllWallet
+
+
 };
