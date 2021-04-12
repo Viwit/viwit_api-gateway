@@ -47,6 +47,7 @@ const transactionTypeDef = `
     mount: Int!
     type: Int!
   }
+
 `
 const transactionQueries = `
 getAllWallet: DataAllWallet!
