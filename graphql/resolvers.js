@@ -1,4 +1,6 @@
+//Score Microservice
 const { getscore, putscore } = require('./score/resolvers')
+//General Microservice
 const { getBusByLicensePlate, getAllBus, putBus, postBus, deleteBus, getAllBusStop, getBusStopById
       , putBusStop, postBusStop, deleteBusStop
       , getAllDriver, getDriverByDriversLicense, putDriver, postDriver, deleteDriver
@@ -9,11 +11,11 @@ const { postCreateWallet, getWalletByUserId,  getAllWallet, postCreateTransactio
 
 
 module.exports = {
-  /*------SCORE------*/
+  //Score
   getscore,
   putscore,
 
-  /*------GENERAL------*/
+  //General
   getBusByLicensePlate,
   getAllBus,
   putBus,
