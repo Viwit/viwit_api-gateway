@@ -1,7 +1,7 @@
 const apiAdapter = require('../../apiAdapter');
 
 //BASE URL FOR THE MICROSERVICE
-const SCORE_URL = 'http://localhost:8000';
+const SCORE_URL = 'http://host.docker.internal:8000';
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(SCORE_URL);
