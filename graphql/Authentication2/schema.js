@@ -10,6 +10,9 @@ const tokenTypeDef = `
     id: String!
   }
 
+  type response{
+    String!
+  }
 `
 const tokenQueries = `
 read_token(id: Int!): token!
@@ -18,6 +21,8 @@ read_token(id: Int!): token!
 const tokenMutations = `
 update_token(id: Int!): token_id!
 create_token(id: Int!): token_id!
+unlock_account(id_user: Int!): response!
+block_account(id_user: Int!): response!
 `
 
 module.exports = {

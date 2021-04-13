@@ -8,7 +8,7 @@ const api = apiAdapter(TRANSACTION_URL)
 
 module.exports = {
   update_token: async function ({id}) {
-    res = await api.get(`/update-token/${id}`)
+    res = await api.put(`/update-token/${id}`)
     return res.data
   },
 
@@ -18,7 +18,17 @@ module.exports = {
   },
 
   create_token: async function ({id}) {
-    res = await api.get(`/create-token/${id}`)
+    res = await api.post(`/create-token/${id}`)
     return res.data
   },
+
+  unlock_account: async function ({id_user}){
+    res = await api.put(`/update-unlockAccount/${id}`)
+    return res.data
+  },
+
+  block_account: async function ({id_user}){
+    res = await api.put(`/update-blockAccount/${id}`)
+    return res.data
+  }
 }
