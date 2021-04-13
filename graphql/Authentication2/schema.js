@@ -1,13 +1,13 @@
 const tokenTypeDef = `
   type token{
-    token_id: Int!
+    finish: String!
+    id: Int!
+    initial: String!
     token: String!
-    expiration_date: String!
-    creation_date: String!
   }
 
   type token_id{
-    token_id: Int!
+    id: String!
   }
 
 `

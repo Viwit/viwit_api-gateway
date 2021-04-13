@@ -57,17 +57,14 @@ module.exports = {
   postTrip,
   deleteTrip,
 
+  /*------TRANSACTION------*/
 
-
-    /*------TRANSACTION------*/
-    
-
-    postCreateWallet,
-    getWalletByUserId,
-    getAllWallet,
-    getTransactionById,
-    getAllTransaction,
-    postCreateTransaction
+  postCreateWallet,
+  getWalletByUserId,
+  getAllWallet,
+  getTransactionById,
+  getAllTransaction,
+  postCreateTransaction
 
 
 };
