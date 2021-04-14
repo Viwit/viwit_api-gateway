@@ -11,7 +11,7 @@ const tokenTypeDef = `
   }
 
   type response{
-    String!
+    message: String!
   }
 `
 const tokenQueries = `
