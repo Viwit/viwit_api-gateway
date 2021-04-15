@@ -1,7 +1,7 @@
 const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
-const AUTHENTICATION_URL = 'http://ec2-3-91-52-122.compute-1.amazonaws.com:3000/api';
+const {AUTHENTICATION_URL} = require('../../util/servers') 
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(AUTHENTICATION_URL)
