@@ -7,11 +7,13 @@ const {generalTypeDef, generalMutations, generalQueries} = require('./general/sc
 const {transactionTypeDef, transactionMutations, transactionQueries} = require('./transaction/schema');
 const {authenticationTypeDef, authenticationMutations, authenticationQueries} = require('./auth1/schema');
 const {tokenTypeDef, tokenQueries, tokenMutations} = require('./auth2/schema');
+const {qrTypeDef, qrMutations, qrQueries} = require('./qr/schema');
 
 //MERGE IN ARRAYS
-let typeDefs = [scoreTypeDef, generalTypeDef,transactionTypeDef,authenticationTypeDef ]
-let queries = [scoreQueries, generalQueries,transactionQueries,authenticationQueries ]
-let mutations = [scoreMutations, generalMutations, transactionMutations,authenticationMutations]
+let typeDefs = [scoreTypeDef, generalTypeDef,transactionTypeDef,authenticationTypeDef , tokenTypeDef, qrTypeDef]
+let queries = [scoreQueries, generalQueries,transactionQueries,authenticationQueries,qrQueries, tokenQueries ]
+let mutations = [scoreMutations, generalMutations, transactionMutations,authenticationMutations, qrMutations, tokenMutations]
+
 
 //CONCATENATE AND BUILD MAIN SCHEMA
 const mainSchema = buildSchema(mergeSchemas(typeDefs,queries,mutations));
