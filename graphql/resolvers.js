@@ -11,7 +11,14 @@ const { postCreateWallet, getWalletByUserId,  getAllWallet, postCreateTransactio
 
 const { getuser,setUser,updateUser,deleteUser } = require('./authentication1/resolvers')
 
+const { update_token, read_token, create_token} = require('./Authentication2/resolvers')
+
 module.exports = {
+  /*-----Authentication2-----*/
+  update_token,
+  read_token,
+  create_token,
+
   //Score
   getscore,
   putscore,
@@ -53,10 +60,7 @@ module.exports = {
   postTrip,
   deleteTrip,
 
-
-
-    /*------TRANSACTION------*/
-    
+  /*------TRANSACTION------*/
 
     postCreateWallet,
     getWalletByUserId,
@@ -70,8 +74,16 @@ module.exports = {
     getuser,
     setUser,
     updateUser,
-    deleteUser
+    deleteUser,
 
+
+
+  postCreateWallet,
+  getWalletByUserId,
+  getAllWallet,
+  getTransactionById,
+  getAllTransaction,
+  postCreateTransaction
 
 
 
