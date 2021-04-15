@@ -9,9 +9,9 @@ const { getBusByLicensePlate, getAllBus, putBus, postBus, deleteBus, getAllBusSt
       , getAllTrips, getTripByIdIdTrip, getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver, putTrip, postTrip, deleteTrip} = require('./general/resolvers')
 const { postCreateWallet, getWalletByUserId,  getAllWallet, postCreateTransaction, getTransactionById, getAllTransaction } = require('./transaction/resolvers')
 
-const { getuser,setUser,updateUser,deleteUser } = require('./authentication1/resolvers')
+const { getuser,setUser,updateUser,deleteUser } = require('./auth1/resolvers')
 
-const { update_token, read_token, create_token} = require('./Authentication2/resolvers')
+const { update_token, read_token, create_token} = require('./auth2/resolvers')
 
 module.exports = {
   /*-----Authentication2-----*/
