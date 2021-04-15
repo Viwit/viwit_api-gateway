@@ -9,6 +9,7 @@ const { getBusByLicensePlate, getAllBus, putBus, postBus, deleteBus, getAllBusSt
       , getAllTrips, getTripByIdIdTrip, getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver, putTrip, postTrip, deleteTrip} = require('./general/resolvers')
 const { postCreateWallet, getWalletByUserId,  getAllWallet, postCreateTransaction, getTransactionById, getAllTransaction } = require('./transaction/resolvers')
 
+const { getuser,setUser,updateUser,deleteUser } = require('./authentication1/resolvers')
 
 module.exports = {
   //Score
@@ -62,7 +63,16 @@ module.exports = {
     getAllWallet,
     getTransactionById,
     getAllTransaction,
-    postCreateTransaction
+    postCreateTransaction,
+
+
+    /* authentication1   */
+    getuser,
+    setUser,
+    updateUser,
+    deleteUser
+
+
 
 
 };

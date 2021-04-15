@@ -3,10 +3,10 @@ const mergeSchemas = require('../util/mergeSchemas')
 const {scoreTypeDef, scoreMutations, scoreQueries} = require('./score/schema');
 const {generalTypeDef, generalMutations, generalQueries} = require('./general/schema')
 const {transactionTypeDef, transactionMutations, transactionQueries} = require('./transaction/schema');
-
-let typeDefs = [scoreTypeDef, generalTypeDef,transactionTypeDef ]
-let queries = [scoreQueries, generalQueries,transactionQueries ]
-let mutations = [scoreMutations, generalMutations, transactionMutations]
+const {authenticationTypeDef, authenticationMutations, authenticationQueries} = require('./authentication1/schema');
+let typeDefs = [scoreTypeDef, generalTypeDef,transactionTypeDef,authenticationTypeDef ]
+let queries = [scoreQueries, generalQueries,transactionQueries,authenticationQueries ]
+let mutations = [scoreMutations, generalMutations, transactionMutations,authenticationMutations]
 
 const mainSchema = buildSchema(mergeSchemas(typeDefs,queries,mutations));
 
