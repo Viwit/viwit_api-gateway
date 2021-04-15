@@ -1,7 +1,7 @@
 const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
-const TRANSACTION_URL = 'http://localhost:8081';
+const TRANSACTION_URL = 'http://ec2-54-226-16-1.compute-1.amazonaws.com:8080';
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(TRANSACTION_URL)
@@ -22,12 +22,12 @@ module.exports = {
     return res.data
   },
 
-  unlock_account: async function ({id_user}){
+  unlock_account: async function ({id}){
     res = await api.put(`/update-unlockAccount/${id}`)
     return res.data
   },
 
-  block_account: async function ({id_user}){
+  block_account: async function ({id}){
     res = await api.put(`/update-blockAccount/${id}`)
     return res.data
   }
