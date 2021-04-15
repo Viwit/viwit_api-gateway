@@ -1,7 +1,7 @@
 const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
-const GENERAL_URL = 'http://host.docker.internal:4000';
+const {GENERAL_URL} = require('../../util/servers') 
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(GENERAL_URL);

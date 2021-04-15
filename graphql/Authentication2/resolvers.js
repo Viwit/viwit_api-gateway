@@ -1,10 +1,10 @@
 const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
-const TRANSACTION_URL = 'http://ec2-54-226-16-1.compute-1.amazonaws.com:8080';
+const {AUTHENTICATION_2_URL} = require('../../util/servers') 
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
-const api = apiAdapter(TRANSACTION_URL)
+const api = apiAdapter(AUTHENTICATION_2_URL)
 
 module.exports = {
   update_token: async function ({id}) {
