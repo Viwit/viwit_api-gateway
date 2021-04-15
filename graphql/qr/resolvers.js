@@ -1,7 +1,7 @@
 const apiAdapter = require('../../util/apiAdapter')
 
 //BASE URL FOR THE MICROSERVICE
-const QR_URL = 'http://3.94.196.153:8050';
+const {QR_URL} = require('../../util/servers') 
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(QR_URL);

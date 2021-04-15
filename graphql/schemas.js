@@ -11,8 +11,8 @@ const {qrTypeDef, qrMutations, qrQueries} = require('./qr/schema');
 
 //MERGE IN ARRAYS
 let typeDefs = [scoreTypeDef, generalTypeDef,transactionTypeDef,authenticationTypeDef , tokenTypeDef, qrTypeDef]
-let queries = [scoreQueries, generalQueries,transactionQueries,authenticationQueries,qrQueries, tokenQueries ]
-let mutations = [scoreMutations, generalMutations, transactionMutations,authenticationMutations, qrMutations, tokenMutations]
+let queries = [scoreQueries, generalQueries,transactionQueries,authenticationQueries, tokenQueries, qrQueries ]
+let mutations = [scoreMutations, generalMutations, transactionMutations,authenticationMutations, tokenMutations, qrMutations ]
 
 
 //CONCATENATE AND BUILD MAIN SCHEMA
