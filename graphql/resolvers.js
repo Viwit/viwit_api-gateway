@@ -1,90 +1,14 @@
-//Score Microservice
-const { getscore, putscore } = require('./score/resolvers')
-//General Microservice
-const { getBusByLicensePlate, getAllBus, putBus, postBus, deleteBus, getAllBusStop, getBusStopById
-      , putBusStop, postBusStop, deleteBusStop
-      , getAllDriver, getDriverByDriversLicense, putDriver, postDriver, deleteDriver
-      , getAllRoute, getRouteByIdRoute, putRoute,postRoute,deleteRoute
-      , getAllRouteStops, getRouteStopByIdRouteStopsIdBusStop_BusStop, postRouteStops, deleteRouteStops
-      , getAllTrips, getTripByIdIdTrip, getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver, putTrip, postTrip, deleteTrip} = require('./general/resolvers')
-const { postCreateWallet, getWalletByUserId,  getAllWallet, postCreateTransaction, getTransactionById, getAllTransaction } = require('./transaction/resolvers')
-
-const { getuser,setUser,updateUser,deleteUser } = require('./auth1/resolvers')
-
-const { update_token, read_token, create_token} = require('./auth2/resolvers')
+// IMPORT RESOLVERS
+const scoreResolvers = require('./score/resolvers')
+const generalResolvers = require('./general/resolvers')
+const transactionResolvers = require('./transaction/resolvers')
+const auth1Resolvers = require('./auth1/resolvers')
+const auth2Resolvers = require('./auth2/resolvers')
 
 module.exports = {
-  /*-----Authentication2-----*/
-  update_token,
-  read_token,
-  create_token,
-
-  //Score
-  getscore,
-  putscore,
-
-  //General
-  getBusByLicensePlate,
-  getAllBus,
-  putBus,
-  postBus,
-  deleteBus,
-
-  getAllBusStop,
-  getBusStopById,
-  putBusStop,
-  postBusStop,
-  deleteBusStop,
-
-  getAllDriver,
-  getDriverByDriversLicense,
-  putDriver,
-  postDriver,
-  deleteDriver,
-
-  getAllRoute,
-  getRouteByIdRoute,
-  putRoute,
-  postRoute,
-  deleteRoute,
-
-  getAllRouteStops,
-  getRouteStopByIdRouteStopsIdBusStop_BusStop,
-  postRouteStops,
-  deleteRouteStops,
-
-  getAllTrips,
-  getTripByIdIdTrip,
-  getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver,
-  putTrip,
-  postTrip,
-  deleteTrip,
-
-  /*------TRANSACTION------*/
-
-    postCreateWallet,
-    getWalletByUserId,
-    getAllWallet,
-    getTransactionById,
-    getAllTransaction,
-    postCreateTransaction,
-
-
-    /* authentication1   */
-    getuser,
-    setUser,
-    updateUser,
-    deleteUser,
-
-
-
-  postCreateWallet,
-  getWalletByUserId,
-  getAllWallet,
-  getTransactionById,
-  getAllTransaction,
-  postCreateTransaction
-
-
-
+  ...scoreResolvers,
+  ...generalResolvers,
+  ...transactionResolvers,
+  ...auth1Resolvers,
+  ...auth2Resolvers
 };
