@@ -1,4 +1,9 @@
 const generalTypeDef = `
+
+  type Message{
+    message: String!
+  }
+
   type Bus {
     licensePlateBus: String!
     model: String!
@@ -20,6 +25,10 @@ const generalTypeDef = `
 
   input BusStopInput{
     idBusStop: Int!
+    nameOrAddressBusStop: String!
+  }
+
+  input BusStopInputPost{
     nameOrAddressBusStop: String!
   }
 
@@ -53,36 +62,63 @@ const generalTypeDef = `
     approximateDuration: String!
   }
 
+  input RouteInputPost{
+    nameRoute: String!
+    initialBusStop: String!
+    finalBusStop: String!
+    approximateDuration: String!
+  }
+
   type RouteStops{
-    idRoute_Route: Int!
-    idBusStop_BusStop: Int!
+    route_IdRoute: Int!
+    busStop_IdBusStop: Int!
+    positionRouteStops: Int!
   }
 
   input RouteStopsInput{
-    idRoute_Route: Int!
-    idBusStop_BusStop: Int!
+    route_IdRoute: Int!
+    busStop_IdBusStop: Int!
+    positionRouteStops: Int!
   }
 
   type Trip{
     idTrip: String!
-    idRoute_Route: Int!
-    licensePlateBus_Bus: String!
-    driversLicense_Driver: String!
-    idBusStop_BusStop: Int!
+    Route_IdRoute: Int!
+    Bus_LicensePlateBus: String!
+    Driver_DriversLicense: String!
+    BusStop_IdBusStop: Int!
     currentTripOccupation: Int!
     startDate: String!
     tripStatus: String!
+    totalPassengersTrip: Int!
   }
 
   input TripInput{
-    idTrip: String!
-    idRoute_Route: Int!
-    licensePlateBus_Bus: String!
-    driversLicense_Driver: String!
-    idBusStop_BusStop: Int!
+    idTrip: Int!
+    Route_IdRoute: Int!
+    Bus_LicensePlateBus: String!
+    Driver_DriversLicense: String!
+    BusStop_IdBusStop: Int!
     currentTripOccupation: Int!
     startDate: String!
     tripStatus: String!
+    totalPassengersTrip: Int!
+  }
+
+  input TripInputPost{
+    Route_IdRoute: Int!
+    Bus_LicensePlateBus: String!
+    Driver_DriversLicense: String!
+    BusStop_IdBusStop: Int!
+    currentTripOccupation: Int!
+    startDate: String!
+    tripStatus: String!
+    totalPassengersTrip: Int!
+  }
+
+  type BusStopsByIdRoute{
+    positionRouteStops: Int!
+    nameOrAddressBusStop: String!
   }
 `
 const generalQueries= `
@@ -99,10 +135,12 @@ const generalQueries= `
   getRouteByIdRoute(idRoute: Int!): Route!
 
   getAllRouteStops: [RouteStops]!
-  getRouteStopByIdRouteStopsIdBusStop_BusStop(idRoute_Route: Int!, idBusStop_BusStop: Int!): RouteStops!
+  getBusStopsByIdRoute(route_IdRoute: Int!): [BusStopsByIdRoute]!
+  getRouteStopByIdRouteStopsIdBusStop_BusStop(route_IdRoute: Int!, busStop_IdBusStop: Int!): [RouteStops]!
+  getRouteStopByIdRouteStopsIdBusStop_BusStop_Position(route_IdRoute: Int!, busStop_IdBusStop: Int!, positionRouteStops: Int!): RouteStops!
 
   getAllTrips: [Trip]!
-  getTripByIdIdTrip(idTrip: String!): Trip!
+  getTripByIdIdTrip(idTrip: Int!): Trip!
   getTripByIdRoute_RouteLicensePlateBus_BusDriversLicense_Driver(idRoute_Route: Int!, licensePlateBus_Bus: String!, driversLicense_Driver: String!): Trip!
 `
 
@@ -112,7 +150,7 @@ const generalMutations = `
   deleteBus(licensePlate: String!): Bus!
 
   putBusStop(idBusStop: Int!, busStop: BusStopInput!): BusStop!
-  postBusStop(busStop: BusStopInput!): BusStop!
+  postBusStop(busStop: BusStopInputPost!): Message!
   deleteBusStop(idBusStop: Int!): BusStop!
 
   putDriver(driversLicense: String!, driver: DriverInput!): Driver!
@@ -120,15 +158,15 @@ const generalMutations = `
   deleteDriver(driversLicense: String!): Driver!
 
   putRoute(idRoute: Int!, route: RouteInput!): Route!
-  postRoute(route: RouteInput!): Route!
+  postRoute(route: RouteInputPost!): Message!
   deleteRoute(idRoute: Int!): Route!
 
-  postRouteStops(routeStops: RouteStopsInput!): RouteStops!
-  deleteRouteStops(idRoute_Route: Int!, idBusStop_BusStop: Int!): RouteStops!
+  postRouteStops(routeStops: RouteStopsInput!): Message!
+  deleteRouteStops(route_IdRoute: Int!, busStop_IdBusStop: Int!, positionRouteStops: Int!): RouteStops!
 
-  putTrip(idTrip: String!, trip: TripInput!): Trip!
-  postTrip(trip: TripInput!): Trip!
-  deleteTrip(idTrip: String!): Trip!
+  putTrip(idTrip: Int!, trip: TripInput!): Trip!
+  postTrip(trip: TripInputPost!): Message!
+  deleteTrip(idTrip: Int!): Trip!
 `
 
 module.exports = {

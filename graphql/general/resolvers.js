@@ -101,16 +101,24 @@ module.exports = {
     res = await api.get(`/RouteStops`)
     return res.data 
   },
-  getRouteStopByIdRouteStopsIdBusStop_BusStop: async function({idRoute_Route, idBusStop_BusStop}){
-    res = await api.get(`/RouteStops/Route/${idRoute_Route}/BusStop/${idBusStop_BusStop}`)
+  getBusStopsByIdRoute : async function({route_IdRoute}){
+    res = await api.get(`/RouteStops/RouteId/${route_IdRoute}`)
+    return res.data 
+  },
+  getRouteStopByIdRouteStopsIdBusStop_BusStop: async function({route_IdRoute, busStop_IdBusStop}){
+    res = await api.get(`/RouteStops/Route/${route_IdRoute}/BusStop/${busStop_IdBusStop}`)
+    return res.data  
+  },
+  getRouteStopByIdRouteStopsIdBusStop_BusStop_Position: async function({route_IdRoute, busStop_IdBusStop, positionRouteStops}){
+    res = await api.get(`/RouteStops/Route/${route_IdRoute}/BusStop/${busStop_IdBusStop}/positionRouteStops/${positionRouteStops}`)
     return res.data  
   },
   postRouteStops: async function({routeStops}){
     res = await api.post(`/RouteStops`, routeStops)   
     return res.data
   },
-  deleteRouteStops: async function({idRoute_Route, idBusStop_BusStop}){
-    res = await api.delete(`/RouteStops/Route/${idRoute_Route}/BusStop/${idBusStop_BusStop}`)
+  deleteRouteStops: async function({route_IdRoute, busStop_IdBusStop, positionRouteStops}){
+    res = await api.delete(`/RouteStops/Route/${route_IdRoute}/BusStop/${busStop_IdBusStop}/positionRouteStops/${positionRouteStops}`)
     return res.data
   },
 

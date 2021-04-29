@@ -1,7 +1,7 @@
 const AUTHENTICATION_URL = 'http://ec2-3-91-52-122.compute-1.amazonaws.com:3000/api';
 const AUTHENTICATION_2_URL = 'http://ec2-54-226-16-1.compute-1.amazonaws.com:8080';
 const TRANSACTION_URL = 'http://ec2-52-3-246-76.compute-1.amazonaws.com:4100';
-const GENERAL_URL = 'http://ec2-3-87-225-226.compute-1.amazonaws.com:4000';
+const GENERAL_URL = 'http://localhost:4000';
 const SCORE_URL = 'http://localhost:8000';
 const QR_URL = 'http://3.94.196.153:8050';
 
