@@ -37,6 +37,7 @@ const generalTypeDef = `
     name: String!
     driverExperience: Int!
     averageDriverRating: String!
+    userIdDriver: Int!
   }
 
   input DriverInput{
@@ -44,6 +45,7 @@ const generalTypeDef = `
     name: String!
     driverExperience: Int!
     averageDriverRating: String!
+    userIdDriver: Int!
   }
 
   type Route{
