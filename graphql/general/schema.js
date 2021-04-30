@@ -9,6 +9,7 @@ const generalTypeDef = `
     model: String!
     seatedPassengerCapacity: Int!
     standingPassengerCapacity: Int!
+    debtCollectorIdUser: Int!
   }
 
   input BusInput {
@@ -16,6 +17,7 @@ const generalTypeDef = `
     model: String!
     seatedPassengerCapacity: Int!
     standingPassengerCapacity: Int!
+    debtCollectorIdUser: Int!
   }
 
   type BusStop{
@@ -37,7 +39,6 @@ const generalTypeDef = `
     name: String!
     driverExperience: Int!
     averageDriverRating: String!
-    userIdDriver: Int!
   }
 
   input DriverInput{
@@ -45,7 +46,6 @@ const generalTypeDef = `
     name: String!
     driverExperience: Int!
     averageDriverRating: String!
-    userIdDriver: Int!
   }
 
   type Route{
