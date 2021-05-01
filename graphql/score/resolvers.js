@@ -7,6 +7,19 @@ const { SCORE_URL } = require('../../util/servers');
 const api = apiAdapter(SCORE_URL);
 
 module.exports = {
+  getAllScores : async function () {
+    res = await api.get('/scores/');
+    let entities = []
+    res.data.entities.forEach(element => {
+      entities.push({
+        id : parseInt(element._id),
+        kind: parseInt(element.kind),
+        score : parseFloat(element.score)
+      })
+    });
+    return entities;
+  },
+  
   getscore: async function ({ id, kind }) {
     res = await api.get('/score/', { params: { id: id, kind: kind } });
     return {
