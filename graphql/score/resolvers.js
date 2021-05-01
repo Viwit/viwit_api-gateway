@@ -10,7 +10,6 @@ module.exports = {
   getAllScores : async function () {
     res = await api.get('/scores/');
     let entities = []
-    console.log(res.data.entities)
     res.data.entities.forEach(element => {
       entities.push({
         id : parseInt(element._id),
@@ -18,10 +17,9 @@ module.exports = {
         score : parseFloat(element.score)
       })
     });
-    console.log(entities)
     return entities;
-      
   },
+  
   getscore: async function ({ id, kind }) {
     res = await api.get('/score/', { params: { id: id, kind: kind } });
     return {

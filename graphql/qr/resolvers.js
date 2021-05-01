@@ -44,9 +44,7 @@ module.exports = {
 
     // VEHICLE
     getAllVehicle: async function(){
-        
         res = await api.get('/api/vehicules-qr/')
-        console.log(res.data)
         return res.data
     },
 
