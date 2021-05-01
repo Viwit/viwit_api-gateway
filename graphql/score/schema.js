@@ -1,4 +1,10 @@
 const scoreTypeDef = `
+  type Entity{
+    id: Int!
+    kind: Int!
+    score: Float!
+  }
+
   type EntityScore {
     id: Int!
     score: Float!
@@ -16,6 +22,7 @@ const scoreTypeDef = `
 `
 const scoreQueries= `
   getscore(id: Int!, kind: Int!): EntityScore!
+  getAllScores : [Entity]!
 `
 
 const scoreMutations = `
