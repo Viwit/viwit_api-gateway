@@ -17,12 +17,17 @@ const transactionTypeDef = `
     status: String!
     type: Int!
     wallet_id: Int!
+    date: String!
   }
 
   type DataAllTransaction {
     data : [Transaction!]
   }
 
+  type DataDateAllTransaction {
+    data : [Transaction!]
+  }
+  
   type Tran {
     data: Transaction!
   }
@@ -54,7 +59,10 @@ getAllWallet: DataAllWallet!
 getWalletByUserId(id: Int!): SingleWallet!
 getTransactionById(id: Int!): SingleTransaction!
 getAllTransaction: DataAllTransaction!
-
+getTransactionsByWalletId(id: Int!): DataAllTransaction!
+getTransactionsByWalletIdStatus(id: Int!, status: String!): DataAllTransaction!
+getTransactionsByWalletIdType(id: Int!, type: Int!): DataAllTransaction!
+getTransactionsByWalletIdDate(id: Int!): DataAllTransaction!
 `
 
 const transactionMutations = `
@@ -64,7 +72,7 @@ postCreateTransaction(transaction:TransactionInput!): SingleTransaction!
 `
 
 module.exports = {
-  transactionTypeDef,
-  transactionQueries,
-  transactionMutations
+    transactionTypeDef,
+    transactionQueries,
+    transactionMutations
 }
