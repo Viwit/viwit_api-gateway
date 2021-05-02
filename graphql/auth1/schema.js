@@ -5,6 +5,7 @@ type User{
   Lastname: String!
   Email: String!
   Reg_date: String!
+  User_type: Int!
 }
 input UserInput {
   User_id: Int

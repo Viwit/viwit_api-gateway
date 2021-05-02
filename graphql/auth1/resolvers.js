@@ -22,6 +22,7 @@ module.exports = {
 
     getusers: async function() {
         res = await api.get(`/users`)
+        console.log(res.data)
         return res.data
     },
 
