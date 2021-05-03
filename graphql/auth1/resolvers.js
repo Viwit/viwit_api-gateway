@@ -22,13 +22,10 @@ module.exports = {
 
     getusers: async function() {
         res = await api.get(`/users`)
-        console.log(res.data)
         return res.data
     },
 
-    setUser: async function({
-        user
-    }) {
+    setUser: async function({user}) {
         res = await api.post(`/user`, user)
         if (res.data != null) {
             postCreateWallet({

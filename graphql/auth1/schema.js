@@ -14,6 +14,7 @@ input UserInput {
   Email: String!
   User_password: String!
   Block_account: Boolean!
+  User_type: Int
 }
   type CustomNull{
     success: Boolean!
