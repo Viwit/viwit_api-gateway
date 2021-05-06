@@ -15,12 +15,13 @@ const tokenTypeDef = `
   }
 `
 const tokenQueries = `
-read_token(id: Int!): token!
+getToken(id: Int!): token!
 `
 
 const tokenMutations = `
-update_token(id: Int!): token_id!
-create_token(id: Int!): token_id!
+deleteToken(id: Int!): response!
+putToken(id: Int!): token_id!
+postToken(id: Int!): token_id!
 unlock_account(id_user: Int!): response!
 block_account(id_user: Int!): response!
 `

@@ -7,18 +7,23 @@ const {AUTHENTICATION_2_URL} = require('../../util/servers')
 const api = apiAdapter(AUTHENTICATION_2_URL)
 
 module.exports = {
-  update_token: async function ({id}) {
-    res = await api.put(`/update-token/${id}`)
+  putToken: async function ({id}) {
+    res = await api.put(`/token/${id}`)
     return res.data
   },
 
-  read_token: async function ({id}) {
-    res = await api.get(`/read-token/${id}`)
+  getToken: async function ({id}) {
+    res = await api.get(`/token/${id}`)
     return res.data
   },
 
-  create_token: async function ({id}) {
-    res = await api.post(`/create-token/${id}`)
+  deleteToken: async function ({id}) {
+    res = await api.delete(`/token/${id}`)
+    return res.data
+  },
+
+  postToken: async function ({id}) {
+    res = await api.post(`/token/${id}`)
     return res.data
   },
 
