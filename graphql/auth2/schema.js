@@ -4,17 +4,10 @@ const tokenTypeDef = `
     id: Int!
     initial: String!
     token: String!
-    type: String!
   }
 
-  type token_post{
+  type token_id{
     id: String!
-    token: String!
-  }
-
-  type token_put{
-    isValid: Int!
-    token: token!
   }
 
   type response{
@@ -22,13 +15,12 @@ const tokenTypeDef = `
   }
 `
 const tokenQueries = `
-
+read_token(id: Int!): token!
 `
 
 const tokenMutations = `
-deleteToken(): response!
-putToken(id: Int!, token: String!): token_id!
-postToken(id: Int!, , type: String!): token_post!
+update_token(id: Int!): token_id!
+create_token(id: Int!): token_id!
 unlock_account(id_user: Int!): response!
 block_account(id_user: Int!): response!
 `
