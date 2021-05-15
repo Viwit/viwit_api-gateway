@@ -7,8 +7,7 @@ const {
 //BASE URL FOR THE MICROSERVICE
 const {
     AUTHENTICATION_URL
-} = require('../../util/servers');
-const { ResumeToken } = require('mongodb');
+} = require('../../util/servers')
 
 //API TOOL USING AXIOS FOR SENDING REQUESTS
 const api = apiAdapter(AUTHENTICATION_URL)
@@ -28,12 +27,10 @@ module.exports = {
 
     setUser: async function({user}) {
         res = await api.post(`/user`, user)
-        //restoken = await api.post(`/token/${id}`)
         if (res.data != null) {
             postCreateWallet({
                 wallet: {
                     token: "generico", //Cambiar al token que se genera para cada usuario
-                    //token: restoken.data.id
                     user_id: 1 //Cambiar al id del usuario
                 }
             })
