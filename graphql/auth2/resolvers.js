@@ -12,6 +12,11 @@ module.exports = {
     return res.data
   },
 
+  get_login: async function ({email, password}){
+    res = await api.get(`/login/${email}/${password}`)
+    return res.data
+  },
+
   post_token: async function ({id, type}) {
     res = await api.post(`/token/${id}/${type}`)
     return res.data

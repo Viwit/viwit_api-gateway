@@ -12,6 +12,10 @@ const tokenTypeDef = `
     token: String!
   }
 
+  type islogin_res{
+    isLogin: Int!
+  }
+
   type token_put{
     isValid: Int!
     token: token!
@@ -22,7 +26,7 @@ const tokenTypeDef = `
   }
 `
 const tokenQueries = `
-
+get_login(email: String!, password: String!): islogin_res!
 `
 
 const tokenMutations = `
