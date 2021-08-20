@@ -14,6 +14,7 @@ const tokenTypeDef = `
 
   type islogin_res{
     isLogin: Int!
+    user_id: Int!
   }
 
   type token_put{
