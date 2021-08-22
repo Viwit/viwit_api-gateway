@@ -18,7 +18,7 @@ module.exports = {
   },
 
   get_token_firebase: async function ({id}) {
-    res = await api.post(`/token-firebase/${id}`)
+    res = await api.get(`/token-firebase/${id}`)
     return res.data
   },
 
