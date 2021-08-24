@@ -1,9 +1,9 @@
-const AUTHENTICATION_URL = 'http://54.237.94.101:3000/api';
-const AUTHENTICATION_2_URL = 'http://54.237.94.101:8080';
+const AUTHENTICATION_URL = 'http://54.237.173.202:31760/api';
+const AUTHENTICATION_2_URL = 'http://54.237.173.202:31164';
 const TRANSACTION_URL = 'http://54.237.94.101:4100';
-const GENERAL_URL = 'http://ec2-3-239-247-115.compute-1.amazonaws.com:4000';
+const GENERAL_URL = 'http://54.237.173.202:30034';
+const SCORE_URL = 'http://54.237.173.202:31417';
 
-const SCORE_URL = 'http://172.17.0.1:8000';
 const QR_URL = 'http://100.25.223.26:8050';
 
 module.exports = {
