@@ -12,6 +12,16 @@ module.exports = {
     return res.data
   },
 
+  put_token_firebase: async function ({id, firebase}) {
+    res = await api.post(`/token-firebase/${id}/${firebase}`)
+    return res.data
+  },
+
+  get_token_firebase: async function ({id}) {
+    res = await api.get(`/token-firebase/${id}`)
+    return res.data
+  },
+
   get_login: async function ({email, password}){
     res = await api.get(`/login/${email}/${password}`)
     return res.data
