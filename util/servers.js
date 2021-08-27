@@ -1,16 +1,17 @@
-const AUTHENTICATION_URL = 'http://54.237.173.202:31760/api';
-const AUTHENTICATION_2_URL = 'http://54.237.173.202:31164';
-const TRANSACTION_URL = 'http://54.237.94.101:4100';
-const GENERAL_URL = 'http://54.237.173.202:30034';
-const SCORE_URL = 'http://54.237.173.202:31417';
+const url = process.env.HOST || 'localhost';
 
-const QR_URL = 'http://100.25.223.26:8050';
+const AUTHENTICATION_URL = `http://${url}:${process.env.AUTH}/api` || `http://${url}:3000/api`;
+const AUTHENTICATION_2_URL = `http://${url}:${process.env.AUTH2}` || `http://${url}:8080`;
+const TRANSACTION_URL = `http://54.237.94.101:4100`;
+const GENERAL_URL = `http://${url}:${process.env.GEN}` || `http://${url}:4000`;
+const SCORE_URL = `http://${url}:${process.env.SCO}` || `http://${url}:8000`;
+const QR_URL = `http://100.25.223.26:8050`;
 
 module.exports = {
   AUTHENTICATION_URL,
   AUTHENTICATION_2_URL,
   TRANSACTION_URL,
   GENERAL_URL,
-  SCORE_URL, 
-  QR_URL
-}
+  SCORE_URL,
+  QR_URL,
+};
