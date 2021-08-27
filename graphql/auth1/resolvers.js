@@ -27,14 +27,6 @@ module.exports = {
 
     setUser: async function({user}) {
         res = await api.post(`/user`, user)
-        if (res.data != null) {
-            postCreateWallet({
-                wallet: {
-                    token: "generico", //Cambiar al token que se genera para cada usuario
-                    user_id: 1 //Cambiar al id del usuario
-                }
-            })
-        }
         return res.data
     },
 
